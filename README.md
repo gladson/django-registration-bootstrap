@@ -4,11 +4,11 @@ Django Registration Bootstrap
 Simple sample using bootstrap from twitter in forms of Django
 -------------------------------------------------------------
 
-Just update to Bootstrap from Twitter version 2.3.1
+Just update to Bootstrap from Twitter version 3.0.3
 
 Just update to Django version 1.6
 
-http://twitter.github.com/bootstrap
+http://getbootstrap.com/
 
 To clone, just syncdb and do runserver:
 
@@ -20,10 +20,10 @@ To clone, just syncdb and do runserver:
 	Creating table auth_group_permissions
 	Creating table auth_group
 	Creating table auth_user_groups
-        Creating table auth_user_user_permissions
-        Creating table auth_user
-        Creating table django_content_type
-        Creating table django_session
+	Creating table auth_user_user_permissions
+	Creating table auth_user
+	Creating table django_content_type
+	Creating table django_session
 
 	You just installed Django's auth system, which means you don't have any superusers defined.
 	Would you like to create one now? (yes/no): yes
