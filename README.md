@@ -15,15 +15,10 @@ To clone, just syncdb and do runserver:
 	python manage.py syncdb
 	
 	Creating tables ...
-	
 	Creating table django_admin_log
-	
 	Creating table auth_permission
-	
 	Creating table auth_group_permissions
-	
 	Creating table auth_group
-	
 	Creating table auth_user_groups
         Creating table auth_user_user_permissions
         Creating table auth_user
