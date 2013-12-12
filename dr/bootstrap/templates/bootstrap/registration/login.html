@@ -1,0 +1,44 @@
+{% extends 'bootstrap/capa.html' %}
+{% load i18n static %}
+{% block css %}
+{% include "bootstrap/includes/css.html" %}
+<link href="{% static 'bootstrap/css/signin.css' %}" rel="stylesheet">
+{% endblock %}
+{% block conteudo %}
+    <div class="container">
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <p><strong>{% trans "Oh snap!" %}</strong> {% trans "Please enter a correct username and password. Note that both fields are case-sensitive." %}</p>
+            </div>
+        {% endif %}
+        <form action="{% url 'login_bootstrap' %}" method="post" class="form-signin" role="form">
+            {% csrf_token %}
+            <h2 class="form-signin-heading">{% trans 'Log in' %}</h2>
+            {% for field in form %}
+                {% include 'bootstrap/registration/form_field.html' %}
+            {% endfor %}
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> {% trans 'Remember me' %}
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Log in' %}</button>
+            <a href="{% url 'password_reset_bootstrap' %}" class="btn btn-lg btn-default btn-block">{% trans "Reset my password" %}</a>
+        </form>
+        
+        
+    </div>
+{% endblock %}
+{% block js %}
+{% include "bootstrap/includes/js.html" %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.form-signin').find('input').each(function(){
+            var text = $('input[type=text]').addClass('form-control').attr({ placeholder:"Email",}).prop('required',true).prop('autofocus',true);
+            var password = $('input[type=password]').addClass('form-control').attr({ placeholder:"Senha",}).prop('required',true);
+            var username = $('label[for="id_username"]').remove();
+            var password = $('label[for="id_password"]').remove();
+            var br = $('br').remove();
+        });
+    });
+</script>
+{% endblock %}

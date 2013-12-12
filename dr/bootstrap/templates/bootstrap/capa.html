@@ -1,0 +1,18 @@
+{% extends 'bootstrap/base.html' %}
+{% load i18n static %}
+{% block css %}
+{% include "bootstrap/includes/css.html" %}
+{% endblock %}
+{% block container %}
+    <div id="page-content-wrapper">
+        <div class="page-content inset">
+            <div class="row">
+                {% block conteudo %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>       
+{% endblock %}
+{% block js %}
+{% include "bootstrap/includes/js.html" %}
+{% endblock %}
